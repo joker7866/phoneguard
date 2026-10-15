@@ -1,0 +1,13 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="PhoneGuard">
+  <defs>
+    <linearGradient id="pgShield" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5a9bff"/>
+      <stop offset="1" stop-color="#1565c0"/>
+    </linearGradient>
+  </defs>
+  <path d="M32 4 L54 13 V31 C54 46 44 56 32 60 C20 56 10 46 10 31 V13 Z"
+        fill="url(#pgShield)"/>
+  <path d="M32 19 c-6.2 0 -11.2 5 -11.2 11.2 c0 8.2 11.2 19 11.2 19 s11.2 -10.8 11.2 -19 C43.2 24 38.2 19 32 19 z"
+        fill="#ffffff" opacity="0.96"/>
+  <circle cx="32" cy="30.2" r="4.6" fill="#1565c0"/>
+</svg>

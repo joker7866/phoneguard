@@ -1,0 +1,28 @@
+rules_version = '2';
+
+// PhoneGuard security rules.
+// A device document carries an `ownerUid`. The signed-in owner may read/write
+// only their own devices. Device-level rules check `resource.data.ownerUid`
+// directly (this works for both single-doc reads AND list queries — using
+// get() here would make the dashboard's `where("ownerUid","==",uid)` query
+// fail with "Missing or insufficient permissions"). Subcollections have no
+// ownerUid of their own, so they look it up on the parent device with get(),
+// which is safe because the device id is concrete in those paths.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    match /devices/{deviceId} {
+      allow read: if request.auth != null
+                  && resource.data.ownerUid == request.auth.uid;
+      allow create: if request.auth != null
+                    && request.resource.data.ownerUid == request.auth.uid;
+      allow update, delete: if request.auth != null
+                            && resource.data.ownerUid == request.auth.uid;
+
+      match /{sub}/{docId} {
+        allow read, write: if request.auth != null
+          && get(/databases/$(database)/documents/devices/$(deviceId)).data.ownerUid == request.auth.uid;
+      }
+    }
+  }
+}

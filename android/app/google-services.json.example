@@ -1,0 +1,8 @@
+// RENAME this file to "google-services.json" after you download the real one.
+// You get the real file from the Firebase Console:
+//   Project settings > Your apps > Android app > "google-services.json".
+// It must sit here: android/app/google-services.json
+// The package name you register in Firebase MUST be: com.phoneguard.app
+//
+// This .example file is only a placeholder so you know where the file goes.
+// Do NOT commit the real google-services.json to a public repo.

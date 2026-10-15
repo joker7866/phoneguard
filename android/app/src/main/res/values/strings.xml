@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">PhoneGuard</string>
+    <string name="device_admin_desc">Lets PhoneGuard lock this phone remotely when you report it lost or stolen.</string>
+    <string name="notif_channel_name">PhoneGuard protection</string>
+    <string name="notif_message_channel_name">PhoneGuard messages</string>
+    <string name="notif_text">PhoneGuard protection active</string>
+</resources>
